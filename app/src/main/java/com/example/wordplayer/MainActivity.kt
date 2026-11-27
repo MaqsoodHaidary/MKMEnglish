@@ -462,18 +462,18 @@ class MainActivity : ComponentActivity() {
         playerScreen.visibility = View.VISIBLE
         controlsShown = false
         setControls(true)
-        setImmersive(true)
+        applyImmersive(true)
     }
 
     private fun showHome() {
         player.pause()
         playerScreen.visibility = View.GONE
         homeScreen.visibility = View.VISIBLE
-        setImmersive(false)
+        applyImmersive(false)
         refreshStats()
     }
 
-    private fun setImmersive(on: Boolean) {
+    private fun applyImmersive(on: Boolean) {
         val c = WindowCompat.getInsetsController(window, window.decorView)
         if (on) {
             c.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
